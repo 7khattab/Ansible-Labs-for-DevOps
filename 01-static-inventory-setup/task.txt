@@ -1,0 +1,19 @@
+1- Create a custom static inventory file named inventory in the /home/admin/mylabproject 
+working directory.
+
+2- Use Ansible to list all managed nodes, ungrouped nodes, and Cairo Nodes.
+
+3- Create a user named ‘devops’ on production hosts using Ansible Ad-hoc commands with
+password ‘12345’. (Hint: Password to be hashed using sha512 and mysecret key)
+
+4- Create an Ansible configuration file under /home/admin/mylabproject to use the inventory file
+
+Created in step 1, and to connect to remote hosts through the user (devops).
+
+5- Using Ansible, configure privilege escalation to use the root account with sudo without
+password authentication.
+
+6- Using Ansible, configure sudo configuration on the production group.
+
+7- Using Ansible-doc, research the module debug to print a message named “ My first debug msg!”
+after connecting to the production group. 
