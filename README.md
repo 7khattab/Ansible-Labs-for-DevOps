@@ -1,32 +1,26 @@
+# **Ansible Lab Repository**  
+### *Automation, Configuration, and Infrastructure as Code*  
 
-# Ansible Lab Project
+🔹 **Purpose**: This repository contains my Ansible labs, documenting my learning journey in automation, configuration management, and IaC best practices.  
 
-This repository contains my Ansible practice tasks, demonstrating my skills in managing infrastructure with Ansible.  
-The project covers inventory management, ad-hoc commands, privilege escalation, configuration files, and module usage.
+🔹 **Current Progress**:  
+- **Lab 1**: Static Inventory Setup *(Completed)*  
 
 ---
 
-## 📂 Project Structure Example
+## **📂 Repository Structure**  
+ansible-labs/
+└── 01-static-inventory-setup/
+├── ansible.cfg # Ansible configuration
+├── inventory.ini # Static inventory file
+├── task.txt # Lab objectives
+└── answer.txt # Solution & explanation
 
-01-static-inventory-setup/
-  ├── ansible.cfg
-  ├── inventory.ini
-  ├── task.txt
-  └── answer.txt
+## **🛠 Lab 1: Static Inventory Setup**  
+📍 **Directory**: `01-static-inventory-setup/`  
 
-
-## **1. 01-static-inventory-setup**
-
-  **Description:**  
-    This task demonstrates creating a custom static inventory in Ansible, configuring the `ansible.cfg` file to use it, and documenting the task details and solution. It         lays the foundation for managing groups of hosts efficiently.
-
-  **Folder:** `01-static-inventory-setup`  
-  **Files:**
+### **📝 Task Overview**  
+- Create a static inventory file (`inventory.ini`) with grouped hosts.  
+- Configure `ansible.cfg` to use the custom inventory.  
+- Verify connectivity using `ansible` commands.
   
-      - `ansible.cfg` — Ansible configuration file pointing to the static inventory.
-      
-      - `inventory.ini` — Static inventory defining host groups (`production`, `cairo`, and ungrouped).
-      
-      - `task.txt` — Task requirements.
-      
-      - `answer.txt` — Commands and steps to complete the task.
