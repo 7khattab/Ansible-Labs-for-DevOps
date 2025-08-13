@@ -22,6 +22,7 @@ The project covers inventory management, ad-hoc commands, privilege escalation, 
 
   **Folder:** `01-static-inventory-setup`  
   **Files:**
+  
       - `ansible.cfg` — Ansible configuration file pointing to the static inventory.
       
       - `inventory.ini` — Static inventory defining host groups (`production`, `cairo`, and ungrouped).
