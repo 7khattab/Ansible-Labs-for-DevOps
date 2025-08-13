@@ -7,6 +7,7 @@ The project covers inventory management, ad-hoc commands, privilege escalation, 
 ---
 
 ## 📂 Project Structure Example
+
 01-static-inventory-setup/
   ├── ansible.cfg
   ├── inventory.ini
@@ -22,6 +23,9 @@ The project covers inventory management, ad-hoc commands, privilege escalation, 
   **Folder:** `01-static-inventory-setup`  
   **Files:**
       - `ansible.cfg` — Ansible configuration file pointing to the static inventory.
+      
       - `inventory.ini` — Static inventory defining host groups (`production`, `cairo`, and ungrouped).
+      
       - `task.txt` — Task requirements.
+      
       - `answer.txt` — Commands and steps to complete the task.
