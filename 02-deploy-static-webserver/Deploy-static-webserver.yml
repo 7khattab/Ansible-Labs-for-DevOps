@@ -1,0 +1,53 @@
+---
+- name: Deploy Apache Web Server
+  hosts: production
+  become: yes
+  tasks:
+
+    - name: install required packages
+      yum:
+        name:
+          - httpd
+          - firewalld
+        state: latest
+
+    - name: start and enable httpd 
+      service:
+        name: httpd
+        state: started     
+        enabled: yes
+
+    - name: start and enable firewalld
+      service:
+        name: firewalld
+        state: started
+        enabled: yes    
+
+    - name: create index.html page
+      copy:
+        dest: /var/www/html/index.html
+        content: " my first web server on Ansible\n"
+        mode: '0644'
+
+
+    - name: Verify and allow http in firewall
+      firewalld:
+        service: http
+        state: enabled
+        permanent: yes
+        immediate: yes
+
+
+    - name: Verify web server
+      uri:
+        url: http://production/index.html
+        return_content: yes
+      register: webpage
+
+
+    - name: show the page content 
+      debug:
+        var: webpage.content
+
+
+

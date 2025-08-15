@@ -1,0 +1,15 @@
+Create a Playbook named Deploy-static-webserver.yml that deploys a web server on production:
+
+First play should include the following:
+
+• Verify that firewalld and httpd are installed in the latest version 
+
+• Verify that firewalld and httpd services are up and running 
+
+• Place index.html under /var/www/html in both nodes with a message “ My first web server on Ansible”. 
+
+• Verify that the HTTP service is added to the firewall-config on production in runtime and permanently.
+
+The second play should include the following:
+
+• Using the uri Module, verify that index.html on managednode1 is reachable through the control node.
