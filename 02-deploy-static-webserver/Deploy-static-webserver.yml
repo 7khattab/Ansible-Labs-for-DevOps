@@ -40,7 +40,7 @@
 
     - name: Verify web server
       uri:
-        url: http://production/index.html
+        url: http://{{ansible_host }}/index.html
         return_content: yes
       register: webpage
 
