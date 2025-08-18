@@ -2,9 +2,8 @@
 ---
 - name: create user by using the variable
   hosts: production
-  vars:
-    name: mohamed
-    user_pass: "12345"
+  vars_files:
+    - secrets.yml
   tasks:
     - name: create a user called {{ user_name }}
       user:
