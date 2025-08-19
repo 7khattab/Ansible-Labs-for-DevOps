@@ -1,0 +1,18 @@
+1) Create a playbook Install-Essentials.yml that installs 2 different packages and installs them on
+each managed node so that:
+
+. The First Managed node (managednode1) should have the tcpdump and git packages installed
+by default.
+. The 2nd Managed node (managednode2) should have Docker and MariaDB installed by
+default.
+. Run the playbook to install an additional 2 packages on both nodes: Docker and stratisd
+
+2) Use the Ansible ad-hoc command to get the content of a vault.
+
+. Create a YML file called sqlcredentials.yml that contains (user=root, password=dolfined).
+. Encrypt this file by using Ansible Vaults.
+. View the content of the sqlcredentials.yml file
+. View the content of sqlcredentials.yml vault.
+
+3) Collect Ansible facts about your local host.
+

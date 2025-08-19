@@ -1,0 +1,39 @@
+---
+- name: install essentials on managednode1
+  hosts: managednode1
+  become: true
+  tasks:
+    - name: install tcpdump and git 
+      package:
+        name:
+          - tcpdump
+          - git
+        state: present
+
+- name: install essentials on managednode2
+  hosts: managednode2
+  become: true
+  tasks:
+    - name: install docker and mariadb
+      package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - mariadb
+        state: present
+
+- name: install additional packages on both nodes
+  hosts: all
+  become: true
+  tasks:
+    - name: install docker and stratisd
+      package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - stratisd
+        state: present
+        
+           

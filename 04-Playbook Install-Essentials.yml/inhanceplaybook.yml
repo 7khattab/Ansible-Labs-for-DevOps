@@ -1,0 +1,31 @@
+---
+- name: install essentials on managednodes
+  hosts: all
+  become: true
+  tasks:
+    - name: install tcpdump and git on managednode1
+      when: inventory_hostname == 'managednode1'
+      package:
+        name:
+          - tcpdump
+          - git
+        state: present
+
+    - name: install docker and mariadb on managednode2
+      when: inventory_hostname == 'managednode2'
+      package:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - mariadb
+        state: present
+
+    - name: install additional packages on both nodes
+      package:
+        name:
+          - docker-ce
+          - docker-ce-cli 
+          - containerd.io
+          - stratisd
+        state: present         
