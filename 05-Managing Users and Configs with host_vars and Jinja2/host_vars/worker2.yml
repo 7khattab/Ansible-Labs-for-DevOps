@@ -1,0 +1,5 @@
+user_info:
+  - { name: "khattab", uid: 1002 , groups: "users" }
+
+nginx_port: 9090
+server_name: worker2.local

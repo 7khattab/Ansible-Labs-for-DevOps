@@ -1,0 +1,23 @@
+
+# Task Explanation
+
+## Idea
+
+We want to practice using **Ansible variables and Jinja2 templates** in different situations.
+
+1. **Playbook 1 (using only host_vars without Jinja2 template):**
+
+   Each worker machine (worker1, worker2) will create a user with different details (username, UID) defined in their `host_vars`.
+   No template is needed here.
+
+2. **Playbook 2 (using Jinja2 template for users):**
+
+   Instead of directly using `host_vars`, we will create a Jinja2 template (`users.j2`)
+   that dynamically generates a file `/tmp/users.txt` on each host with the user information.
+   This shows how templates can be used even for user data.
+
+3. **Playbook 3 (real-world config with Jinja2 template):**
+
+   Worker1 should run Nginx on port 8080, Worker2 should run Nginx on port 9090.
+   We will use a single template (`nginx.conf.j2`) that generates a different configuration file for each worker,
+   depending on the variables in `host_vars`. This shows the **main power of Jinja2 templates** when dealing with a configuration file

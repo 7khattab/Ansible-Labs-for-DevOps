@@ -1,0 +1,25 @@
+---
+# create users with different metouds
+
+- name: "create users from host_vars"
+  hosts: all
+  tasks:
+    - name: "create users from host_vars"
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        group: "{{ item.groups }}"
+      loop: "{{ user_info }}" 
+
+
+- name: "create users with template"
+  hosts: all
+  tasks:
+    - name: "create user from j2file"
+      template:
+        src: "template/users.j2"
+        dest: "/tmp/users.txt"
+
+
+  
+

@@ -1,0 +1,19 @@
+---
+- name: "Deploy Nginx configuration using template"
+  hosts: all
+  tasks:
+    - name: "Generate nginx.conf from j2 file"
+      template:
+        src: "template/nginx.config.j2"
+        dest: "/etc/nginx/nginx.conf"
+
+    - name: "Insert message in nginx.conf"
+      lineinfile:
+        path: "/etc/nginx/nginx.conf"
+        line: "This is a message from the {{ inventory_hostname }} file"
+        state: present
+      register: nginx_message
+
+    - name: "Show debug message"
+      debug:
+        msg: "Nginx configuration updated on {{ inventory_hostname }} with message: This is a message from the {{ inventory_hostname }} file"
