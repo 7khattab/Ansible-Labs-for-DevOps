@@ -1,0 +1,15 @@
+---
+- name: welcome_message
+  hosts: production
+  vars:
+    system_owner: "mohamed khattab"
+  tasks:
+    - name: Display a welcome_message
+      copy:
+        content:  |
+          Welcome to this system!
+          This system is maintained by {{ system_owner }}
+          for any issues contact ( support@xyz.com )
+        dest: /etc/motd  
+
+

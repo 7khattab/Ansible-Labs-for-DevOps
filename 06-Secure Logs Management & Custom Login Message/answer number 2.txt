@@ -1,0 +1,17 @@
+2) Using a single ad-hoc command, Configure rsyslogd on managednode2:
+
+     Any log coming from the authpriv facility of priority alert and higher to be stored
+    under /var/log/mylogs/alert-secure.
+    Verify your configuration by using ad-hoc commands.
+
+
+# answer
+
+    from the authpriv facility of priority alert
+* ansible managednode2 -m lineinfile -a "path=/etc/rsyslog.conf  line='authpriv.alert  /var/log/mylogs/alert-secure'"
+    restart the rsyslogd service
+* ansible managednode2 -m service -a " name=rsyslog state=restarted "
+    test the role i write by test message using ( logger ) < logger -p facility.priority  "message" >
+* ansible managednode2 -m shell -a " logger -p authpriv.alert 'the test message'" 
+    show the message i send to be sure it work 
+* ansible managednode2 -m shell -a " tail -n 5 /var/log/mylogs/alert-secure "

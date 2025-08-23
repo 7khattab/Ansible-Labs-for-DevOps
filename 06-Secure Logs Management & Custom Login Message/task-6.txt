@@ -1,0 +1,13 @@
+1) Write a playbook called gather-securelogs.yml that gathers /var/log/secure log files from hosts.
+
+    under the production group and stores the logs under /home/< user_name >/mylabproject/Remotelogs
+
+2) Using a single ad-hoc command, Configure rsyslogd on managednode2:
+
+     Any log coming from the authpriv facility of priority alert and higher to be stored
+    under /var/log/mylogs/alert-secure.
+    Verify your configuration by using ad-hoc commands.
+
+3) Develop a playbook named welcome_message.yml on the production group to show a welcome
+    message after SSH authentication that contains the current system_owner, and to reach out to
+    user support@xyz.com in case of any issues. (Hint: Use the /etc/motd file)

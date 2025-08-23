@@ -1,0 +1,11 @@
+---
+- name: gather secure logs from production hosts
+  hosts: production
+  become: yes
+  tasks:
+    - name: fetch secure logs from remote hosts
+      fetch: 
+        src: /var/log/secure
+        dest: /home/mohamedkhattab/mylabproject/Remotelogs/
+        
+
